@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/styles/style.css">
+  <style>
+    input {
+      padding: 10px;
+    }
+    #survey-form {
+      background-color: #1e1e1e;
+      padding: 20px;
+    }
+    .group-form {
+      display: flex;
+      flex-direction: column;
+    }
+    .column-label {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .checkbox-list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .container {
+      padding: 5%;
+    }
+    select {
+      padding: 10px;
+      cursor: pointer;
+    }
+    button {
+      padding: 10px 30px;
+      background-color: lightgreen;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: orange;
+    }
+    .subtitle {
+      text-decoration: underline;
+      text-decoration-color: orange;
+      text-underline-offset: 2px;
+      line-height: 155%;
+    }
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 25%;
+      }
+    }
+  </style>
+  <title>Mahrus Sayid - Survey Form</title>
+</head>
+<body>
+  <main class="container">
+    <div style="padding: 10px 0;">
+      <h1 style="text-align: center;" id="title">Survey Form</h1>
+      <p style="text-align: center;" id="description">Here is a simple static html form</p>
+    </div>
+    <form action="" id="survey-form">
+      <div class="group-form">
+        <label class="column-label" for="name" id="name-label">
+          <span class="subtitle">Name</span>
+          <input placeholder="Your awesome name here" type="text" name="name" id="name" required>
+        </label>
+        <label class="column-label" for="email" id="email-label">
+          <span class="subtitle">Email</span>
+          <input placeholder="Your marvelous email here" type="email" name="email" id="email" required>
+        </label>
+        <labe class="column-label" for="number" id="number-label">
+          <span class="subtitle">Age (Optional)</span>
+          <input placeholder="Enter your honest age please" type="number" name="age" id="number" max=50 min=18>
+        </label>
+      </div>
+      <div class="group-form">
+        <label class="column-label" for="role" id="dropdown-label">
+          <span class="subtitle">Your current role</span>
+          <select name="role" id="dropdown">
+            <option value disabled selected>Select your current role</option>
+            <option value="student">Student</option>
+            <option value="full-time">Fulltime Job</option>
+            <option value="part-time">Part Time Job</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+      </div>
+      <div class="group-form">
+        <p class="subtitle">Your Gender</p>
+        <label  for="radio" class="radio">
+          <input type="radio" name="gender" value="man" checked>
+          Man
+        </label>
+        <label for="radio" class="radio">
+          <input type="radio" name="gender" value="woman" >
+          Woman
+        </label>
+      </div>
+      <div class="group-form">
+        <p class="subtitle">What do you prefer?</p>
+        <div class="checkbox-list">
+          <label>
+            <input type="checkbox" name="prefer" value="coffe" >
+            Coffe
+          </label>
+          <label>
+            <input type="checkbox" name="prefer" value="tea" >
+            Tea
+          </label>
+          <label>
+            <input type="checkbox" name="prefer" value="doughnut" >
+            Doughnut
+          </label>
+          <label>
+            <input type="checkbox" name="prefer" value="burger" >
+            Burger
+          </label>
+        </div>
+      </div>
+      <div class="group-form">
+        <p class="subtitle">Give your comment about me.</p>
+        <textarea placeholder="Enter your spicy comment here..." name="" id="comments" cols="30" rows="10"></textarea>
+      </div>
+      <div style="display: flex; justify-content: center; padding: 20px 0;">
+        <button type="submit" id="submit">Submit Form</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
